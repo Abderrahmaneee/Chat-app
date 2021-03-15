@@ -145,6 +145,7 @@ body{
   font-size: 18px;
   font-weight: 500;
 }
+
 .users header .logout{
   display: block;
   background: #333;
@@ -154,7 +155,7 @@ body{
   padding: 7px 15px;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 17px;
+  font-size: 13px;
 }
 .users .search{
   margin: 20px 0;

@@ -23,7 +23,17 @@
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>
-        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+        <a href="editprofil.php" class="edit" style="margin-left: 50px; display: block;
+  background: blue;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 17px;
+  "><i class="far fa-edit"></i></a>
+        <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout"><i class="fas fa-sign-out-alt"></i></a>
       </header>
       <div class="search">
         <span class="text">Select an user to start chat</span>
