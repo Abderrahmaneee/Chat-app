@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once "config.php";
-    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+    $fname = mysqli_real_escape_string($conn, $_POST['fname']); 
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -11,7 +11,11 @@
             if(mysqli_num_rows($sql) > 0){
                 echo "$email - This email already exist!";
             }else{
-                if(isset($_FILES['image'])){
+                $SQL = mysqli_query($conn, "SELECT * FROM users WHERE fname = '{$fname}'");
+                if(mysqli_num_rows($SQL) > 0){
+                    echo "$fname - This email already exist!";
+                }
+                else{                if(isset($_FILES['image'])){
                     $img_name = $_FILES['image']['name'];
                     $img_type = $_FILES['image']['type'];
                     $tmp_name = $_FILES['image']['tmp_name'];
@@ -50,7 +54,8 @@
                     }else{
                         echo "Please upload an image file - jpeg, png, jpg";
                     }
-                }
+                }}
+
             }
         }else{
             echo "$email is not a valid email!";

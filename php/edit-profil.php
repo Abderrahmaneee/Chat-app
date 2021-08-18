@@ -20,7 +20,6 @@
                     $img_name = $_FILES['image']['name'];
                     $img_type = $_FILES['image']['type'];
                     $tmp_name = $_FILES['image']['tmp_name'];
-                    
                     $img_explode = explode('.',$img_name);
                     $img_ext = end($img_explode);
     
